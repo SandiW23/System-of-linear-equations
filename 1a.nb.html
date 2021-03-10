@@ -323,9 +323,203 @@ row: 3
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>1B</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQjwtbWF0cml4KGMoMiwtMSw1LDUsNCwwLDEsMywtMiksMywzLCBGQUxTRSlcbkJcbmBgYCJ9 -->
+<pre class="r"><code>B&lt;-matrix(c(2,-1,5,5,4,0,1,3,-2),3,3, FALSE)
+B</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gICAgMiAgICA1ICAgIDFcblsyLF0gICAtMSAgICA0ICAgIDNcblszLF0gICAgNSAgICAwICAgLTJcbiJ9 -->
+<pre><code>     [,1] [,2]
+[1,]    2    5    1
+[2,]   -1    4    3
+[3,]    5    0   -2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYjwtYygtMTIsLTQsLTEzKVxuc2hvd0VxbihCLGIpXG5gYGAifQ== -->
+<pre class="r"><code>b&lt;-c(-12,-4,-13)
+showEqn(B,b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIDIqeDEgKyA1KngyICsgMSp4MyAgPSAgLTEyXG4gXG4ifQ== -->
+<pre><code> 2*x1 + 5*x2 + 1*x3  =  -12
+ </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU29sdmUoQixiKVxuYGBgIn0= -->
+<pre class="r"><code>Solve(B,b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoieDEgICAgICA9ICAtMyBcbiAgeDIgICAgPSAgLTEgXG4gICAgeDMgID0gIC0xIFxuIn0= -->
+<pre><code>x1      =  -3 
+  x2    =  -1 
+    x3  =  -1 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdEVxbjNkKEIsYilcbmBgYCJ9 -->
+<pre class="r"><code>plotEqn3d(B,b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWNoZWxvbihCLGIpXG5gYGAifQ== -->
+<pre class="r"><code>echelon(B,b)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdXG5bMSxdICAgIDEgICAgMCAgICAwICAgLTNcblsyLF0gICAgMCAgICAxICAgIDAgICAtMVxuWzMsXSAgICAwICAgIDAgICAgMSAgIC0xXG4ifQ== -->
+<pre><code>     [,1] [,2] [,3] [,4]
+[1,]    1    0    0   -3
+[2,]    0    1    0   -1
+[3,]    0    0    1   -1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWNoZWxvbihCLGIsdmVyYm9zZSA9IFRSVUUsZnJhY3Rpb25zID0gVFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>echelon(B,b,verbose = TRUE,fractions = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Jbml0aWFsIG1hdHJpeDpcbiAgICAgWywxXSBbLDJdIFssM10gICAyICAgIDUgICAgMSBcblsyLF0gICAzICAgLTQgXG5bMyxdICAgMCAgIC0yICAtMTMgXG5cbnJvdzogIFxuXG4gZXhjaGFuZ2Ugcm93czEgYW5kIDNcbiAgICAgWywxXSBbLDNdIFssNF1cblsxLF0gICAwICAgLTIgIC0xMyBcblsyLF0gICA0ICAgIDMgICAtNCBcblszLF0gICAyICAgIDUgICAgMSAgLTEyIFxuIDEvNSBcbiAgICAgWywxXSAgWywzXSAgWyw0XSBcblsxLF0gICAgIDAgIC0yLzUgLTEzLzUgICAgLTEgICAgIDQgICAgIDMgICAgLTRcblszLF0gICAgIDIgICAgIDUgICAgIDFcblxuIG11bHRpcGx5IHJvdyAgYnkgMSAgIFxuICAgICBbLDFdICBbLDJdICBbLDNdICBbLDRdICAgICAgMCAgLTIvNSAtMTMvNVxuWzIsXSAgICAgMCAgICAgNCAgMTMvNSAgICAgMiAgICAgNSAgICAgMSAgIC0xMlxuXG4gbXVsdGlwbHkgcm93IDEgYnkgMmFuZCBzdWJ0cmFjdCBmcm9tIHJvdyAzIFxuIFssM10gIFssNF0gXG5bMSxdICAgICAxICAgICAwIC0xMy81XG5bMixdICAgICAwICAgICA0ICAxMy81IC0zMy81IC0zNC81XG5cbnJvdzogXG4gZXhjaGFuZ2Ugcm93cyAgYW5kIDMgXG4gICAgIFssMV0gIFssMl0gIFssM10gXG5bMSxdICAgICAwICAtMi81XG5bMixdICAgICAwICAgICA1ICAgOS81XG5bMyxdICAgICA0IC0zMy81XG5cbiBtdWx0aXBseSByb3cgMiBieSAgICAgICBbLDFdICAgWywyXSAgIFssM10gIFxuWzEsXSAgICAgIDAgICAtMi81ICAtMTMvNSAgICAgIDAgICAgICAxICAgOS8yNVxuWzMsXSAgICAgIDQgIC0zMy81XG4gbXVsdGlwbHkgcm93MiBieSA0YW5kIHN1YnRyYWN0IGZyb20gcm93MyAgICAgIFssMV0gICBbLDNdICAgWyw0XSAgXG5bMSxdICAgLTIvNSAgLTEzLzUgICAgICAwICAgICAgMSAgIDkvMjUgLTM0LzI1ICAgICAgMCAgICAgIDAgLTI5LzI1XG5yb3c6XG5cbiBtdWx0aXBseSByb3czYnkgMjUvMjkgXG4gWywxXSAgIFssMl0gICBbLDNdICAgWyw0XSAgICAgICAgMSAgLTEzLzUgICAgICAwICAgICAgMSAtMzQvMjVcblszLF0gICAgICAwICAgICAgMCAgICAgIDEgICAgIC0xXG4gMyBieSAyLzUgYW5kIGFkZCB0byByb3cgMSAgICAgWywxXSAgIFssMl0gICBbLDNdICAgWyw0XSAgICAgICAgMCAgICAgIDAgICAgIC0zXG5bMixdICAgICAgMCAgICAgIDEgICA5LzI1IC0zNC8yNVxuWzMsXSAgICAgIDAgICAgICAxICAgICAtMVxuXG4gbXVsdGlwbHkgcm93ICBieSBhbmQgc3VidHJhY3QgZnJvbSByb3cgMiBcbiAgICAgWywxXSBbLDNdIFssNF1cblsxLF0gIDEgICAgMCAgICAwICAgLTMgIFxuWzIsXSAgMCAgIC0xICBcblszLF0gIDAgICAgMCAgICAxICAgLTEgIFxuIn0= -->
+<pre><code>
+Initial matrix:
+     [,1] [,2] [,3]   2    5    1 
+[2,]   3   -4 
+[3,]   0   -2  -13 
+
+row:  
+
+ exchange rows1 and 3
+     [,1] [,3] [,4]
+[1,]   0   -2  -13 
+[2,]   4    3   -4 
+[3,]   2    5    1  -12 
+ 1/5 
+     [,1]  [,3]  [,4] 
+[1,]     0  -2/5 -13/5    -1     4     3    -4
+[3,]     2     5     1
+
+ multiply row  by 1   
+     [,1]  [,2]  [,3]  [,4]      0  -2/5 -13/5
+[2,]     0     4  13/5     2     5     1   -12
+
+ multiply row 1 by 2and subtract from row 3 
+ [,3]  [,4] 
+[1,]     1     0 -13/5
+[2,]     0     4  13/5 -33/5 -34/5
+
+row: 
+ exchange rows  and 3 
+     [,1]  [,2]  [,3] 
+[1,]     0  -2/5
+[2,]     0     5   9/5
+[3,]     4 -33/5
+
+ multiply row 2 by       [,1]   [,2]   [,3]  
+[1,]      0   -2/5  -13/5      0      1   9/25
+[3,]      4  -33/5
+ multiply row2 by 4and subtract from row3      [,1]   [,3]   [,4]  
+[1,]   -2/5  -13/5      0      1   9/25 -34/25      0      0 -29/25
+row:
+
+ multiply row3by 25/29 
+ [,1]   [,2]   [,3]   [,4]        1  -13/5      0      1 -34/25
+[3,]      0      0      1     -1
+ 3 by 2/5 and add to row 1     [,1]   [,2]   [,3]   [,4]        0      0     -3
+[2,]      0      1   9/25 -34/25
+[3,]      0      1     -1
+
+ multiply row  by and subtract from row 2 
+     [,1] [,3] [,4]
+[1,]  1    0    0   -3  
+[2,]  0   -1  
+[3,]  0    0    1   -1  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>1C</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQzwtbWF0cml4KGMoMiwyLC0yLC0xLDIsMywzLDMsMCksMywzLEZBTFNFKVxuQ1xuYGBgIn0= -->
+<pre class="r"><code>C&lt;-matrix(c(2,2,-2,-1,2,3,3,3,0),3,3,FALSE)
+C</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAyICAgLTEgICAgMiAgICAzXG5bMyxdICAgIDBcbiJ9 -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    2   -1    2    3
+[3,]    0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2hvd0VxbihDLGMpXG5gYGAifQ== -->
+<pre class="r"><code>showEqn(C,c)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFxuIFxuLTIqeDEgKyAzKngyICsgMCp4MyAgPSAgLTMgXG4ifQ== -->
+<pre><code> 
+ 
+-2*x1 + 3*x2 + 0*x3  =  -3 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU29sdmUoQyxjKVxuYGBgIn0= -->
+<pre class="r"><code>Solve(C,c)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoieDEgICAgICA9ICAgICAgICAgMi41IFxuICB4MiAgICA9ICAwLjY2NjY2NjY3IFxuICAgIHgzICA9ICAwLjIyMjIyMjIyIFxuIn0= -->
+<pre><code>x1      =         2.5 
+  x2    =  0.66666667 
+    x3  =  0.22222222 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWNoZWxvbihDLGMsdmVyYm9zZSA9IFRSVUUsZnJhY3Rpb25zID0gVFJVRSkgXG5gYGAifQ== -->
+<pre class="r"><code>echelon(C,c,verbose = TRUE,fractions = TRUE) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Jbml0aWFsIG1hdHJpeDpcbiAgICAgWywxXSBbLDJdIFssM10gWyw0XVxuWzEsXSAgMiAgIC0xICAgIDMgICAgNSAgICAzICAgIDcgIFxuWzMsXSAtMiAgICAzICAgXG4gMSBieSAgWywyXSBbLDNdICAgIDEgLTEvMiAgMy8yICA1LzJcblsyLF0gICAgMiAgICAzXG5bMyxdICAgIDMgICAtM1xuICBieSAyIGFuZCBzdWJ0cmFjdCBmcm9tIHJvdzIgXG4gICAgIFssMV0gWywzXVxuWzEsXSAgICAxICA1LzJcblsyLF0gICAgMyAgICAyXG5bMyxdICAgIDMgICAgMCAgIC0zXG5cbiBtdWx0aXBseSByb3cgYnkgMmFuZCBhZGQgdG8gcm93IDMgXG4gICAgIFssMV0gWywyXSBbLDNdIFssNF0gICAgMSAtMS8yICAzLzIgIDUvMlxuWzIsXSAgICAwICAgIDMgICAgMCAgICAyXG5bMyxdICAgIDAgICAgMlxucm93OiAyIFxuICBieSAxLzNcbiBbLDFdIFssNF1cblsxLF0gICAgMSAgMy8yICA1LzIgICAgMCAgMi8zXG5bMyxdICAgIDAgICAgMlxuXG4gbXVsdGlwbHkgcm93ICBieSAgYW5kIGFkZCB0byByb3cxICAgICAgWywxXSBbLDNdXG5bMSxdICAgIDEgICAgMCAgMy8yIDE3LzZcblsyLF0gICAgMCAgICAwICAgIDIgICAgMyAgICAyXG5cbiBtdWx0aXBseSByb3cgMmJ5ICAgXG4gWywxXSBbLDJdIFssM10gWyw0XVxuWzEsXSAgICAxICAgIDAgIDMvMiAxNy82XG5bMixdICAgIDAgICAgMSAgICAwICAyLzNcblszLF0gICAgMCAgMi8zXG5yb3c6IDMgXG5cbiBtdWx0aXBseSByb3cgIGJ5IDEvMyBcbiAgICAgWywyXSBbLDNdIFssNF1cblsxLF0gMTcvNlxuWzIsXSAgICAxICAgIDAgICAgMCAgICAxICAyLzlcblxuIG11bHRpcGx5IHJvdyAzIGJ5IDMvMiBhbmQgc3VidHJhY3QgZnJvbSByb3cgMVxuICAgICBbLDFdIFssMl0gWyw0XSAgIDEgICAgMCAgICAwICA1LzIgXG5bMixdICAgMCAgICAxICAyLzMgXG5bMyxdICAgMCAgICAwICAgIDEgIDIvOSBcbiJ9 -->
+<pre><code>
+Initial matrix:
+     [,1] [,2] [,3] [,4]
+[1,]  2   -1    3    5    3    7  
+[3,] -2    3   
+ 1 by  [,2] [,3]    1 -1/2  3/2  5/2
+[2,]    2    3
+[3,]    3   -3
+  by 2 and subtract from row2 
+     [,1] [,3]
+[1,]    1  5/2
+[2,]    3    2
+[3,]    3    0   -3
+
+ multiply row by 2and add to row 3 
+     [,1] [,2] [,3] [,4]    1 -1/2  3/2  5/2
+[2,]    0    3    0    2
+[3,]    0    2
+row: 2 
+  by 1/3
+ [,1] [,4]
+[1,]    1  3/2  5/2    0  2/3
+[3,]    0    2
+
+ multiply row  by  and add to row1      [,1] [,3]
+[1,]    1    0  3/2 17/6
+[2,]    0    0    2    3    2
+
+ multiply row 2by   
+ [,1] [,2] [,3] [,4]
+[1,]    1    0  3/2 17/6
+[2,]    0    1    0  2/3
+[3,]    0  2/3
+row: 3 
+
+ multiply row  by 1/3 
+     [,2] [,3] [,4]
+[1,] 17/6
+[2,]    1    0    0    1  2/9
+
+ multiply row 3 by 3/2 and subtract from row 1
+     [,1] [,2] [,4]   1    0    0  5/2 
+[2,]   0    1  2/3 
+[3,]   0    0    1  2/9 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCg0KYGBge3J9DQpBPC1tYXRyaXgoYyg0LDUsMywtMiwtMiw0LDAsMSwtMSksMywzLGJ5cm93ID0gRkFMU0UpDQpBDQphPC1jKDIsNywzKQ0KYGBgDQpgYGB7cn0NCnNob3dFcW4oQSxhKQ0KYGBgDQpgYGB7cn0NClNvbHZlKEEsYSkNCmBgYA0KYGBge3J9DQpwbG90RXFuM2QoQSxhKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQSxhKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQSxhLHZlcmJvc2U9VFJVRSxmcmFjdGlvbnM9VFJVRSkNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCg0KYGBge3J9DQpBPC1tYXRyaXgoYyg0LDUsMywtMiwtMiw0LDAsMSwtMSksMywzLGJ5cm93ID0gRkFMU0UpDQpBDQphPC1jKDIsNywzKQ0KYGBgDQpgYGB7cn0NCnNob3dFcW4oQSxhKQ0KYGBgDQpgYGB7cn0NClNvbHZlKEEsYSkNCmBgYA0KYGBge3J9DQpwbG90RXFuM2QoQSxhKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQSxhKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQSxhLHZlcmJvc2U9VFJVRSxmcmFjdGlvbnM9VFJVRSkNCmBgYA0KMUINCmBgYHtyfQ0KQjwtbWF0cml4KGMoMiwtMSw1LDUsNCwwLDEsMywtMiksMywzLCBGQUxTRSkNCkINCmI8LWMoLTEyLC00LC0xMykNCnNob3dFcW4oQixiKQ0KYGBgDQpgYGB7cn0NClNvbHZlKEIsYikNCmBgYA0KYGBge3J9DQpwbG90RXFuM2QoQixiKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQixiKQ0KYGBgDQpgYGB7cn0NCmVjaGVsb24oQixiLHZlcmJvc2UgPSBUUlVFLGZyYWN0aW9ucyA9IFRSVUUpDQpgYGANCjFDDQpgYGB7cn0NCkM8LW1hdHJpeChjKDIsMiwtMiwtMSwyLDMsMywzLDApLDMsMyxGQUxTRSkNCkMNCmM8LWMoNSw3LC0zKQ0KYGBgDQpgYGB7cn0NCnNob3dFcW4oQyxjKQ0KYGBgDQpgYGB7cn0NClNvbHZlKEMsYykNCmBgYA0KYGBge3J9DQplY2hlbG9uKEMsYyx2ZXJib3NlID0gVFJVRSxmcmFjdGlvbnMgPSBUUlVFKSANCmBgYA0KDQo=</div>
 
 
 
